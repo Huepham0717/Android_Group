@@ -7,26 +7,22 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.android.group.R;
-import com.android.group.model.Report;
+import com.android.group.model.F0;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/***
- * Report Controller to execute GET, POST and PUT requests to server and store reports in Report Database
- */
-public class ReportController {
+public class F0Controller {
     private static final String MOCK_URL = "https://my-json-server.typicode.com/hoang-10n/Android_Group";
-    private static final String URL = MOCK_URL + "/reports";
+    private static final String URL = MOCK_URL + "/f0s";
     private static final long REFRESH_REQUEST = 60 * 1000; // Refresh content interval = 60 secs
     private static RequestQueue queue = null;
     private static Context context;
@@ -34,32 +30,32 @@ public class ReportController {
 
     public static void init(Context context, ListView container) {
         queue = Volley.newRequestQueue(context);
-        ReportController.context = context;
-        ReportController.container = container;
+        F0Controller.context = context;
+        F0Controller.container = container;
     }
 
-    public static void getAllReports() {
+    public static void getAllF0s() {
         JsonArrayRequest userArrayRequest = new JsonArrayRequest(Request.Method.GET, URL, null,
                 response -> {
-                    ArrayList<String> reports = new ArrayList<>();
+                    ArrayList<String> f0s = new ArrayList<>();
                     for (int i = 0; i < response.length(); i++) {
                         try {
                             JSONObject object = response.getJSONObject(i);
-                            reports.add(object.toString());
+                            f0s.add(object.toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
-                    ArrayAdapter<String> reportArray = new ArrayAdapter<>(context, R.layout.adapter, reports);
-                    container.setAdapter(reportArray);
+                    ArrayAdapter<String> f0Array = new ArrayAdapter<>(context, R.layout.adapter, f0s);
+                    container.setAdapter(f0Array);
 //                    refreshContent();
                 }, Throwable::printStackTrace);
         queue.add(userArrayRequest);
     }
 
-    public static void addReport(Report report) {
+    public static void addF0(F0 f0) {
         try {
-            JSONObject jsonObject = new JSONObject(new Gson().toJson(report));
+            JSONObject jsonObject = new JSONObject(new Gson().toJson(f0));
             JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, URL, jsonObject,
                     response -> Log.d("TAG", response.toString())
                     , Throwable::printStackTrace);
@@ -67,12 +63,12 @@ public class ReportController {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-//        database.addReport(report);
+//        database.addF0(f0);
     }
 
-    public static void updateReport(Report report) {
+    public static void updateF0(F0 f0) {
         try {
-            JSONObject jsonObject = new JSONObject(new Gson().toJson(report));
+            JSONObject jsonObject = new JSONObject(new Gson().toJson(f0));
             JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.PUT, URL, jsonObject,
                     response -> Log.d("TAG", response.toString())
                     , Throwable::printStackTrace);
@@ -80,7 +76,7 @@ public class ReportController {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-//        database.updateReport(report);
+//        database.updateF0(f0);
     }
 
     private static void refreshContent() {
@@ -88,8 +84,9 @@ public class ReportController {
             public void onTick(long millisUntilFinished) {
             }
             public void onFinish() {
-                getAllReports();
+                getAllF0s();
             }
         }.start();
     }
+
 }
