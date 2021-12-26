@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Group assignment</string>
+    <string name="show_all_reports"><i><u>Show all reports</u></i> ></string>
 </resources>
