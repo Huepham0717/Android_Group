@@ -4,29 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1"
     android:backgroundTint="@color/black">
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Status"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="170dp" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Sort by"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="170dp" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -35,12 +14,14 @@
         android:background="@drawable/circle_border"
         android:backgroundTint="@color/design_default_color_primary"
         android:backgroundTintMode="add"
-        android:tint="@color/white"
+        android:contentDescription="back"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:srcCompat="?attr/actionModeCloseDrawable"
-        tools:layout_editor_absoluteY="46dp" />
+        app:tint="@color/white" />
 
     <ImageButton
         android:id="@+id/imageButton7"
@@ -49,26 +30,28 @@
         android:background="@drawable/circle_border"
         android:backgroundTint="@color/design_default_color_primary"
         android:backgroundTintMode="add"
-        android:tint="@color/white"
+        android:contentDescription="add"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:srcCompat="@android:drawable/ic_input_add"
-        tools:layout_editor_absoluteY="46dp" />
+        app:tint="@color/white" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:background="@drawable/rounded_border"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
         app:layout_constraintEnd_toStartOf="@+id/imageButton7"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageButton6"
-        app:layout_constraintTop_toTopOf="@+id/imageButton6">
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/editTextTextPersonName"
@@ -87,15 +70,85 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:backgroundTint="@color/black"
+            android:contentDescription="search"
             app:srcCompat="@android:drawable/ic_menu_search" />
     </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Descending"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="152dp" />
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Status"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/frag_f0_report_status_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_border" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Sort by"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/frag_f0_report_sort_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_border" />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/frag_f0_report_descend_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Desc" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/frag_f0_report_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
