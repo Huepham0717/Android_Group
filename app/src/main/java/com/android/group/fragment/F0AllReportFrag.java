@@ -1,27 +1,24 @@
 package com.android.group.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import com.android.group.F0HomeActivity;
 import com.android.group.R;
+import com.android.group.adapter.ReportAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link LoginFrag#newInstance} factory method to
+ * Use the {@link F0AllReportFrag#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LoginFrag extends Fragment {
-    EditText usernameInput, passwordInput;
-    TextView errorTxt;
+public class F0AllReportFrag extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,7 +29,7 @@ public class LoginFrag extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public LoginFrag() {
+    public F0AllReportFrag() {
         // Required empty public constructor
     }
 
@@ -42,11 +39,11 @@ public class LoginFrag extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment LoginFrag.
+     * @return A new instance of fragment F0AllReportFrag.
      */
     // TODO: Rename and change types and number of parameters
-    public static LoginFrag newInstance(String param1, String param2) {
-        LoginFrag fragment = new LoginFrag();
+    public static F0AllReportFrag newInstance(String param1, String param2) {
+        F0AllReportFrag fragment = new F0AllReportFrag();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,24 +64,11 @@ public class LoginFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
-        usernameInput = view.findViewById(R.id.frag_login_username_input);
-        passwordInput = view.findViewById(R.id.frag_login_password_input);
-        errorTxt = view.findViewById(R.id.frag_login_error_txt);
+        View view = inflater.inflate(R.layout.fragment_f0_report, container, false);
+        RecyclerView reportContainer = view.findViewById(R.id.frag_f0_report_container);
+        ReportAdapter reportAdapter = new ReportAdapter(getContext(), 10);
+        reportContainer.setLayoutManager(new GridLayoutManager(getContext(),1));
+        reportContainer.setAdapter(reportAdapter);
         return view;
-    }
-
-    public void enterApp() {
-        // Check before entering the home screen
-        String usernameStr = usernameInput.getText().toString();
-        String passwordStr = passwordInput.getText().toString();
-        if (usernameStr.equals("") || passwordStr.equals("")) {
-            errorTxt.setText("Please fill all fields");
-        } else {
-            errorTxt.setText("");
-            // TODO move to HomeActivity
-            Intent intent = new Intent(getContext(), F0HomeActivity.class);
-            startActivity(intent);
-        }
     }
 }

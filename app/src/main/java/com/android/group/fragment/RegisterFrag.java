@@ -2,6 +2,7 @@ package com.android.group.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.android.group.F0HomeActivity;
 import com.android.group.R;
 
 import java.util.Calendar;
@@ -115,6 +117,8 @@ public class RegisterFrag extends Fragment {
         } else {
             errorTxt.setVisibility(View.GONE);
             // TODO move to HomeActivity, add to database and call PostRequest
+            Intent intent = new Intent(getContext(), F0HomeActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -128,8 +132,8 @@ public class RegisterFrag extends Fragment {
                 requireActivity(),
                 android.R.style.Theme_Holo_Dialog_MinWidth,
                 (datePicker, year1, month1, day1) -> {
-                    dateInput.setText(year1 + "-" + String.format(Locale.US, "%02d", month1 + 1)
-                            + "-" + String.format(Locale.US, "%02d", day1));
+                    dateInput.setText(String.format(Locale.US, "%02d", day1) + "-" +
+                            String.format(Locale.US, "%02d", month1 + 1) + year1);
                 },
                 year, month, day
         );

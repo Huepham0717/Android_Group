@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white">
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -15,20 +16,18 @@
         android:backgroundTintMode="add"
         android:contentDescription="add"
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         app:srcCompat="@android:drawable/ic_input_add"
         app:tint="@color/white" />
 
     <ImageView
         android:id="@+id/imageView"
-        tools:srcCompat="@drawable/blank"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@android:color/holo_blue_light"
+        android:background="@android:color/holo_orange_light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blank" />
 
     <TextView
         android:id="@+id/textView"
@@ -36,11 +35,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:clickable="true"
+        android:onClick="switchToAllReportFrag"
         android:text="@string/show_all_reports"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag_f0_home_container" />
 
     <TextView
         android:id="@+id/textView2"
@@ -58,6 +58,7 @@
         android:id="@+id/linearLayout4"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@android:color/holo_orange_light"
         android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -88,7 +89,6 @@
         android:id="@+id/frag_f0_home_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/imageButton4"
         tools:layout_editor_absoluteX="1dp" />
 

@@ -4,48 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/white">
+    android:background="@color/white">
 
     <com.android.group.NavBar
+        android:id="@+id/f0_home_navbar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/f0_home_navbar_home_btn"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:background="@android:color/white"
             android:backgroundTint="@android:color/secondary_text_light"
+            android:onClick="switchToHomeFrag"
             app:srcCompat="@drawable/ic_home" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/f0_home_navbar_msg_btn"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:background="@android:color/white"
             android:backgroundTint="@android:color/secondary_text_light"
+            android:onClick="switchToMsgFrag"
             app:srcCompat="@drawable/ic_chat" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/f0_home_navbar_map_btn"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:background="@android:color/white"
             android:backgroundTint="@android:color/secondary_text_light"
+            android:onClick="switchToMapFrag"
             app:srcCompat="@drawable/ic_map" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/f0_home_home_appointment_btn"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:background="@android:color/white"
             android:backgroundTint="@android:color/secondary_text_light"
+            android:onClick="switchToAppointmentFrag"
             app:srcCompat="@drawable/ic_report" />
     </com.android.group.NavBar>
+
+    <FrameLayout
+        android:id="@+id/f0_home_frag_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/f0_home_navbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
