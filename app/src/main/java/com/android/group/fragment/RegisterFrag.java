@@ -85,7 +85,7 @@ public class RegisterFrag extends Fragment {
         nameInput = view.findViewById(R.id.frag_register_name_input);
         usernameInput = view.findViewById(R.id.frag_register_username_input);
         passwordInput = view.findViewById(R.id.frag_register_password_input);
-        addressInput = view.findViewById(R.id.frag_register_address_input);
+        addressInput = view.findViewById(R.id.frag_f0_add_report_disease_input);
         dobInput = view.findViewById(R.id.frag_register_dob_input);
         phoneInput = view.findViewById(R.id.frag_register_phone_input);
         idInput = view.findViewById(R.id.frag_register_passport_input);
@@ -122,6 +122,7 @@ public class RegisterFrag extends Fragment {
         }
     }
 
+    // for the dob input
     private void setDatePickerDialog(EditText dateInput) {
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);

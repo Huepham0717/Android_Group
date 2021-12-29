@@ -319,7 +319,7 @@
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/frag_register_address_input"
+                    android:id="@+id/frag_f0_add_report_disease_input"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"

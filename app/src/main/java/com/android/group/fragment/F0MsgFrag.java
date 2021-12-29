@@ -61,6 +61,6 @@ public class F0MsgFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_msg, container, false);
+        return inflater.inflate(R.layout.fragment_f0_msg, container, false);
     }
 }

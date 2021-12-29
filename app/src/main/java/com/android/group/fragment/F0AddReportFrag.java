@@ -4,9 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.android.group.R;
 
@@ -16,6 +21,8 @@ import com.android.group.R;
  * create an instance of this fragment.
  */
 public class F0AddReportFrag extends Fragment {
+    Spinner coughSpinner, breathSpinner, throatSpinner, pneumoniaSpinner;
+    EditText tempInput, diseaseInput, symptomInput;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +68,21 @@ public class F0AddReportFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_report, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_f0_add_report, container, false);
+        String[] level = {"Normal", "Mild", "Medium", "High", "Extreme"};
+        coughSpinner = view.findViewById(R.id.frag_f0_add_report_cough_spinner);
+        breathSpinner = view.findViewById(R.id.frag_f0_add_report_breath_spinner);
+        throatSpinner = view.findViewById(R.id.frag_f0_add_report_throat_spinner);
+        pneumoniaSpinner = view.findViewById(R.id.frag_f0_add_report_pneumonia_spinner);
+        tempInput = view.findViewById(R.id.frag_f0_add_report_temp_input);
+        diseaseInput = view.findViewById(R.id.frag_f0_add_report_disease_input);
+        symptomInput = view.findViewById(R.id.frag_f0_add_report_symptom_input);
+
+        coughSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.adapter_spinner, level));
+        breathSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.adapter_spinner, level));
+        throatSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.adapter_spinner, level));
+        pneumoniaSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.adapter_spinner, level));
+        return view;
     }
 }

@@ -4,11 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.group.F0HomeActivity;
 import com.android.group.R;
 
 public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportViewHolder> {
@@ -29,7 +32,11 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
 
     @Override
     public void onBindViewHolder(@NonNull ReportAdapter.ReportViewHolder holder, int position) {
-        holder.name.setText("Health report " + position);
+        String nameStr = "Health report " + position;
+        holder.name.setText(nameStr);
+        holder.viewBtn.setOnClickListener(v -> {
+            ((F0HomeActivity) context).switchToViewReportFrag(nameStr);
+        });
     }
 
     @Override
@@ -39,9 +46,11 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
 
     static class ReportViewHolder extends RecyclerView.ViewHolder {
         TextView name;
+        ImageButton viewBtn;
         public ReportViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.adapter_report_datetime_txt);
+            viewBtn = itemView.findViewById(R.id.adapter_report_view_btn);
         }
     }
 }

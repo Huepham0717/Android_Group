@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.android.group.R;
 import com.android.group.adapter.ReportAdapter;
@@ -19,6 +22,7 @@ import com.android.group.adapter.ReportAdapter;
  * create an instance of this fragment.
  */
 public class F0AllReportFrag extends Fragment {
+    Spinner statusSpinner, sortSpinner;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -64,11 +68,43 @@ public class F0AllReportFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_f0_report, container, false);
-        RecyclerView reportContainer = view.findViewById(R.id.frag_f0_report_container);
+        View view = inflater.inflate(R.layout.fragment_f0_all_report, container, false);
+        RecyclerView reportContainer = view.findViewById(R.id.frag_f0_all_report_container);
         ReportAdapter reportAdapter = new ReportAdapter(getContext(), 10);
         reportContainer.setLayoutManager(new GridLayoutManager(getContext(),1));
         reportContainer.setAdapter(reportAdapter);
+
+        statusSpinner = view.findViewById(R.id.frag_f0_all_report_status_spinner);
+        sortSpinner = view.findViewById(R.id.frag_f0_all_report_sort_spinner);
+
+        statusSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.adapter_spinner,
+                new String[]{"Good", "Recovering", "Critical", "Highly Critical"}));
+        sortSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.adapter_spinner,
+                new String[]{"Name", "Date", "Doctor's id"}));
+
+        statusSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        sortSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
         return view;
     }
 }
