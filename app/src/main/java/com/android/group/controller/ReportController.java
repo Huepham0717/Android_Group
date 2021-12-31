@@ -21,9 +21,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/***
- * Report Controller to execute GET, POST and PUT requests to server and store reports in Report Database
- */
 public class ReportController {
     private static final String MOCK_URL = "https://my-json-server.typicode.com/hoang-10n/Android_Group";
     private static final String URL = MOCK_URL + "/reports";
