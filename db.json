@@ -242,8 +242,8 @@
         "aEnd": "06:07",
         "aLat": 12.034950224562877,
         "aLong": 106.55982421788059,
-        "aF0Content": "This is the content from F00 to list the tasks that D00 should do",
-        "aDoctorContent": "This is the content from D00 with the results after checking F00"
+        "aF0Content": "From F00",
+        "aDoctorContent": "From D00"
       },
       {
         "aUUID": "A1",
@@ -254,8 +254,8 @@
         "aEnd": "05:16",
         "aLat": 8.371875382610032,
         "aLong": 108.37742351959935,
-        "aF0Content": "This is the content from F00 to list the tasks that D00,D02 should do",
-        "aDoctorContent": "This is the content from D00,D02 with the results after checking F00"
+        "aF0Content": "From F00",
+        "aDoctorContent": "From D00,D0"
       },
       {
         "aUUID": "A2",
@@ -266,8 +266,8 @@
         "aEnd": "16:20",
         "aLat": 11.837838161703914,
         "aLong": 105.34240910635226,
-        "aF0Content": "This is the content from F01 to list the tasks that D01 should do",
-        "aDoctorContent": "This is the content from D01 with the results after checking F01"
+        "aF0Content": "From F01",
+        "aDoctorContent": "From D01"
       },
       {
         "aUUID": "A3",
@@ -278,8 +278,8 @@
         "aEnd": "01:07",
         "aLat": 8.357367304967305,
         "aLong": 106.90566036396748,
-        "aF0Content": "This is the content from F01 to list the tasks that D01 should do",
-        "aDoctorContent": "This is the content from D01 with the results after checking F01"
+        "aF0Content": "From F01",
+        "aDoctorContent": "From D01"
       },
       {
         "aUUID": "A4",
@@ -290,8 +290,8 @@
         "aEnd": "03:14",
         "aLat": 9.338596331365176,
         "aLong": 106.38803596825286,
-        "aF0Content": "This is the content from F02 to list the tasks that D01 should do",
-        "aDoctorContent": "This is the content from D01 with the results after checking F02"
+        "aF0Content": "From F02",
+        "aDoctorContent": "From D01"
       },
       {
         "aUUID": "A17",
@@ -302,8 +302,8 @@
         "aEnd": "11:48",
         "aLat": 10.922531978689221,
         "aLong": 107.31604526398753,
-        "aF0Content": "This is the content from F08 to list the tasks that D00,D01 should do",
-        "aDoctorContent": "This is the content from D00,D01 with the results after checking F08"
+        "aF0Content": "From F08",
+        "aDoctorContent": "From D00,D0"
       }
     ]
   ]
