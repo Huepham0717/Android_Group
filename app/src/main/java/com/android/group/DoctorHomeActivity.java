@@ -20,7 +20,7 @@ public class DoctorHomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.DoctorHomeActivity);
+        setContentView(R.layout.activity_doctor_home);
 
         rcvUser = findViewById(R.id.rcv_user);
         userAdapter = new UserAdapter(this);
