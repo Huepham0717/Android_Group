@@ -70,9 +70,7 @@ public class F0AllReportFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_f0_all_report, container, false);
         RecyclerView reportContainer = view.findViewById(R.id.frag_f0_all_report_container);
-        ReportAdapter reportAdapter = new ReportAdapter(getContext(), 10);
-        reportContainer.setLayoutManager(new GridLayoutManager(getContext(),1));
-        reportContainer.setAdapter(reportAdapter);
+
 
         statusSpinner = view.findViewById(R.id.frag_f0_all_report_status_spinner);
         sortSpinner = view.findViewById(R.id.frag_f0_all_report_sort_spinner);
