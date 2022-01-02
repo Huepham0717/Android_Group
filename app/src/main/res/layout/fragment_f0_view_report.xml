@@ -18,7 +18,6 @@
         android:contentDescription="back"
         android:onClick="switchToAllReportFrag"
         app:layout_constraintBottom_toBottomOf="@+id/frag_f0_view_report_name_txt"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/frag_f0_view_report_name_txt"

@@ -3,15 +3,25 @@ package com.android.group.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.group.R;
 import com.android.group.adapter.ReportAdapter;
+import com.android.group.controller.MedicalRecordController;
+import com.android.group.controller.UserController;
+import com.android.group.model.MedicalRecord;
+import com.android.group.model.Report;
+import com.android.group.model.User;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,7 +29,10 @@ import com.android.group.adapter.ReportAdapter;
  * create an instance of this fragment.
  */
 public class F0HomeFrag extends Fragment {
-
+    TextView txtUserName;
+    FirebaseAuth firebaseAuth;
+    private RecyclerView.Adapter adapter2;
+    private RecyclerView recyclerViewSiteList;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -65,10 +78,46 @@ public class F0HomeFrag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_f0_home, container, false);
-        RecyclerView reportContainer = view.findViewById(R.id.frag_f0_home_container);
-        ReportAdapter reportAdapter = new ReportAdapter(getContext(), 3);
-        reportContainer.setLayoutManager(new GridLayoutManager(getContext(),1));
-        reportContainer.setAdapter(reportAdapter);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        txtUserName = view.findViewById(R.id.txt_username);
+        recyclerViewSiteList = view.findViewById(R.id.frag_f0_home_container);
+
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            // Get the user's detail
+            UserController userController = new UserController(getContext());
+            userController.getUser(FirebaseAuth.getInstance().getCurrentUser().getUid(), new UserController.VolleyResponseListener() {
+                @Override
+                public void onError(String message) {
+                    Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onResponse(User user) {
+                    txtUserName.setText(user.getUsername());
+                }
+            });
+            MedicalRecordController medicalRecordController = new MedicalRecordController(getContext());
+            medicalRecordController.findMedicalRecordListByPatient(firebaseAuth.getCurrentUser().getUid(),new MedicalRecordController.VolleyResponseListener() {
+                @Override
+                public void onError(String message) {
+                    Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onResponse(MedicalRecord medicalRecord,List<Report> reportList) {
+                    recyclerViewSite(medicalRecord,reportList);
+                }
+            });
+        }
+
         return view;
+    }
+    private void recyclerViewSite(MedicalRecord medicalRecord, List<Report> reportList){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
+        adapter2 = new ReportAdapter(medicalRecord,reportList,getContext());
+        recyclerViewSiteList.setLayoutManager(linearLayoutManager);
+        recyclerViewSiteList.setAdapter(adapter2);
+
     }
 }

@@ -1,5 +1,6 @@
 package com.android.group;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.android.group.fragment.LoginFrag;
 import com.android.group.fragment.RegisterFrag;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     LoginFrag loginFrag;
@@ -54,5 +56,18 @@ public class MainActivity extends AppCompatActivity {
     public void enterApp(View view) {
         if (isLoginFrag) loginFrag.enterApp();
         else registerFrag.enterApp();
+    }
+    @Override
+    public void onStart(){
+        super.onStart();
+        // Check the user signs in or not
+        // If the user does not sign in, the system to move LoginActivity
+        if (FirebaseAuth.getInstance().getCurrentUser() == null){
+            switchToLoginFrag();
+        } else {
+            //FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(getApplicationContext(), F0HomeActivity.class);
+            startActivity(intent);
+        }
     }
 }

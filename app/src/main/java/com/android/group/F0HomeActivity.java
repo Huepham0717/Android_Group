@@ -84,8 +84,8 @@ public class F0HomeActivity extends AppCompatActivity {
         ft.commit();
     }
 
-    public void switchToViewReportFrag(String name) {
-        f0ViewReportFrag = new F0ViewReportFrag(name);
+    public void switchToViewReportFrag(int position, Long reportId) {
+        f0ViewReportFrag = new F0ViewReportFrag(position,reportId);
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
         ft.replace(R.id.f0_home_frag_container, f0ViewReportFrag);
