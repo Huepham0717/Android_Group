@@ -43,7 +43,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         holder.viewBtn.setOnClickListener(v -> {
             ((F0HomeActivity) context).switchToViewReportFrag(position, reportList.get(position).getReportId());
         });
-        holder.vital_status.setText(reportList.get(position).getVitalStat());
+        holder.time.setText(reportList.get(position).getrTimestamp());
     }
 
     @Override
@@ -52,13 +52,13 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
     }
 
     static class ReportViewHolder extends RecyclerView.ViewHolder {
-        TextView name,vital_status;
+        TextView name,time;
         ImageButton viewBtn;
         public ReportViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.adapter_report_datetime_txt);
             viewBtn = itemView.findViewById(R.id.adapter_report_view_btn);
-            vital_status= itemView.findViewById(R.id.adapter_report_role_txt);
+            time= itemView.findViewById(R.id.adapter_report_time_txt);
         }
     }
 }

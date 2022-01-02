@@ -11,7 +11,6 @@ public class Report implements Parcelable {
     private String breath;
     private String sThroat;
     private String pneumonia;
-    private String vitalStat;
     private String diseases;
     private String symptoms;
     private String rTimestamp;
@@ -32,7 +31,6 @@ public class Report implements Parcelable {
         breath = in.readString();
         sThroat = in.readString();
         pneumonia = in.readString();
-        vitalStat = in.readString();
         diseases = in.readString();
         symptoms = in.readString();
         rTimestamp = in.readString();
@@ -53,7 +51,6 @@ public class Report implements Parcelable {
         dest.writeString(breath);
         dest.writeString(sThroat);
         dest.writeString(pneumonia);
-        dest.writeString(vitalStat);
         dest.writeString(diseases);
         dest.writeString(symptoms);
         dest.writeString(rTimestamp);
@@ -123,14 +120,6 @@ public class Report implements Parcelable {
 
     public void setPneumonia(String pneumonia) {
         this.pneumonia = pneumonia;
-    }
-
-    public String getVitalStat() {
-        return vitalStat;
-    }
-
-    public void setVitalStat(String vitalStat) {
-        this.vitalStat = vitalStat;
     }
 
     public String getDiseases() {

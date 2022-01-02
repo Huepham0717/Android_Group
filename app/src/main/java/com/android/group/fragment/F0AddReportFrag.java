@@ -111,7 +111,7 @@ public class F0AddReportFrag extends Fragment {
         report.setPatientUUID(FirebaseAuth.getInstance().getCurrentUser().getUid());
         report.setTemperature(tempInput.getText().toString());
         report.setrTimestamp(Calendar.getInstance().getTime().toString());
-        report.setPneumonia(diseaseInput.getText().toString());
+        report.setDiseases(diseaseInput.getText().toString());
         report.setSymptoms(symptomInput.getText().toString());
         report.setCough(coughSpinner.getSelectedItem().toString());
         report.setBreath(breathSpinner.getSelectedItem().toString());

@@ -97,7 +97,7 @@ public class MedicalRecordController {
                                 report.setBreath(jsonObject.getString("breath"));
                                 report.setsThroat(jsonObject.getString("sthroat"));
                                 report.setPneumonia(jsonObject.getString("pneumonia"));
-                                report.setVitalStat(jsonObject.getString("vitalStat"));
+                                report.setrTimestamp(response.getString("rtimestamp"));
                                 report.setDiseases(jsonObject.getString("diseases"));
                                 report.setPneumonia(jsonObject.getString("symptoms"));
                                 reportList.add(report);
@@ -143,7 +143,7 @@ public class MedicalRecordController {
                         report.setBreath(jsonObject.getString("breath"));
                         report.setsThroat(jsonObject.getString("sThroat"));
                         report.setPneumonia(jsonObject.getString("pneumonia"));
-                        report.setVitalStat(jsonObject.getString("vitalStat"));
+                        report.setrTimestamp(response.getString("rtimestamp"));
                         report.setDiseases(jsonObject.getString("diseases"));
                         report.setPneumonia(jsonObject.getString("symptoms"));
                         reportList.add(report);

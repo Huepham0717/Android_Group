@@ -83,7 +83,6 @@ public class ReportController {
                     report.setCough(response.getString("cough"));
                     report.setBreath(response.getString("breath"));
                     report.setPneumonia(response.getString("pneumonia"));
-                    report.setVitalStat(response.getString("vitalStat"));
                     report.setDiseases(response.getString("diseases"));
                     report.setSymptoms(response.getString("symptoms"));
                     report.setsThroat(response.getString("sthroat"));

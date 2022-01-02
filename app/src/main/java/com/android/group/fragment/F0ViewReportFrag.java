@@ -58,7 +58,6 @@ public class F0ViewReportFrag extends Fragment {
             public void onResponse(Report report) {
                 doctorTxt.setText("DOCTOR NAME AND ID: " + report.getReportId());
                 dateTxt.setText("DATE AND TIME: " + report.getrTimestamp());
-                statusTxt.setText(report.getVitalStat());
             }
         });
         return view;
