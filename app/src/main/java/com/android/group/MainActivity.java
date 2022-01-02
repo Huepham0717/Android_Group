@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
             switchToLoginFrag();
         } else {
-            //FirebaseAuth.getInstance().signOut();
+            FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(getApplicationContext(), F0HomeActivity.class);
             startActivity(intent);
         }
