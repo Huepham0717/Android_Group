@@ -37,15 +37,16 @@
         <entry key="..\:/Users/hoang/Desktop/Android_Group/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
         <entry key="app/src/main/res/layout/activity_f0_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/adapter.xml" value="0.12395833333333334" />
         <entry key="app/src/main/res/layout/adapter_report.xml" value="0.5" />
         <entry key="app/src/main/res/layout/adapter_spinner.xml" value="0.13854166666666667" />
-        <entry key="app/src/main/res/layout/fragment_f0_add_report.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_f0_add_report.xml" value="0.39148936170212767" />
         <entry key="app/src/main/res/layout/fragment_f0_all_report.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_f0_appointment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_f0_home.xml" value="0.40555555555555556" />
         <entry key="app/src/main/res/layout/fragment_f0_map.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_f0_msg.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/fragment_f0_view_report.xml" value="0.43956043956043955" />
+        <entry key="app/src/main/res/layout/fragment_f0_view_report.xml" value="0.24791666666666667" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.22916666666666666" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.3125734430082256" />
         <entry key="app/src/main/res/layout/item_list.xml" value="0.25" />

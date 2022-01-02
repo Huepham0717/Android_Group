@@ -37,72 +37,257 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/frag_f0_view_report_doctor_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="DOCTOR NAME AND ID"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frag_f0_view_report_name_txt" />
 
     <TextView
         android:id="@+id/frag_f0_view_report_date_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="32dp"
         android:text="DATE AND TIME"
         android:textColor="@android:color/darker_gray"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frag_f0_view_report_doctor_txt" />
-
-    <TextView
-        android:id="@+id/textView_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status: "
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/frag_f0_view_report_status_txt"
-        app:layout_constraintTop_toTopOf="@+id/frag_f0_view_report_status_txt" />
-
-    <TextView
-        android:id="@+id/frag_f0_view_report_status_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:text="Recovering"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frag_f0_view_report_date_txt" />
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag_f0_view_report_name_txt" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/rounded_border"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frag_f0_view_report_date_txt"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="65dp">
+        app:layout_constraintVertical_bias="0.229">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_dummy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Temperature"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/frag_f0_view_report_temp_input"
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint=""
+                android:enabled="false"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_dummy2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Cough/Runny nose"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/frag_f0_view_report_cough_input"
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint=""
+                android:enabled="false"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_dummy3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Shortage of breath"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/frag_f0_view_report_breath_input"
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint=""
+                android:enabled="false"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_dummy4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Sore throat"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/frag_f0_view_report_throat_input"
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint=""
+                android:enabled="false"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_dummy5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Pneumonia"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/frag_f0_view_report_pneumonia_input"
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:hint=""
+                android:enabled="false"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray" />
+
+        </TableRow>
 
         <TextView
-            android:id="@+id/frag_f0_view_report_content_txt"
+            android:id="@+id/textView_dummy7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="@string/dummy"
-            android:textColor="@android:color/background_dark"
+            android:layout_margin="5dp"
+            android:text="Are you suffering other diseases?"
+            android:textColor="@color/black"
             android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frag_f0_view_report_doctor_txt" />
-    </ScrollView>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/frag_f0_view_report_disease_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_border"
+            android:ellipsize="none"
+            android:ems="10"
+            android:gravity="top|left"
+            android:hint="Other diseases"
+            android:inputType="textMultiLine"
+            android:lines="2"
+            android:enabled="false"
+            android:padding="5dp"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textView_dummy6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Other symptoms (headache, diarrhea... etc)"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/frag_f0_view_report_symptom_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_border"
+            android:ellipsize="none"
+            android:ems="10"
+            android:gravity="top|left"
+            android:hint="Other symptoms"
+            android:enabled="false"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:padding="5dp"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray" />
+    </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
