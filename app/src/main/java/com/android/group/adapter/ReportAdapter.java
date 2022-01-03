@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -49,7 +48,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         ImageButton viewBtn;
         public ReportViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.adapter_report_datetime_txt);
+            name = itemView.findViewById(R.id.adapter_appointment_start_txt);
             viewBtn = itemView.findViewById(R.id.adapter_report_view_btn);
         }
     }

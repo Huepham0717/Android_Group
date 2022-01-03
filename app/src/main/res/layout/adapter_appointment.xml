@@ -8,10 +8,25 @@
     android:background="@drawable/rectangular_border"
     android:gravity="center_vertical">
 
+    <FrameLayout
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ic_calendar"
+        android:backgroundTint="@android:color/darker_gray">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="3dp"
+            app:srcCompat="@android:drawable/ic_input_add" />
+    </FrameLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="4"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <TextView
@@ -19,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="REPORT NAME"
+            android:text="DOCTOR"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
@@ -28,8 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="DATE AND TIME"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/black"
             android:textSize="14sp"
             tools:layout_editor_absoluteY="19dp" />
     </LinearLayout>
@@ -37,7 +51,6 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -46,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="Status"
+            android:text="DATE"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/adapter_appointment_end_txt"
@@ -58,23 +71,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="Highly critical"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/adapter_appointment_date_txt"
             tools:layout_editor_absoluteX="373dp" />
 
     </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/adapter_report_view_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:background="@android:color/transparent"
-        android:backgroundTint="@color/black"
-        android:contentDescription="search"
-        app:srcCompat="@android:drawable/ic_menu_send" />
 
 </LinearLayout>
