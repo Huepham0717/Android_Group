@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupAssignment">
         <activity
+            android:name=".DoctorUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".DoctorProfileActivity"
             android:exported="false" />
         <!--
