@@ -9,18 +9,21 @@
     android:gravity="center_vertical">
 
     <FrameLayout
+        android:id="@+id/adapter_appointment_view_btn"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/ic_calendar"
-        android:backgroundTint="@android:color/darker_gray">
+        android:backgroundTint="@color/black"
+        android:clickable="true"
+        android:contentDescription="appointment">
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/adapter_appointment_indicator_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginBottom="3dp"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            app:srcCompat="@android:drawable/presence_online" />
     </FrameLayout>
 
     <LinearLayout

@@ -1,6 +1,7 @@
 package com.android.group.fragment;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
@@ -16,13 +17,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.android.group.F0HomeActivity;
 import com.android.group.R;
 
-public class F0AppointmentFrag extends Fragment {
+public class F0ViewAppointmentFrag extends Fragment {
     private static final int MY_PERMISSION_REQUEST_LOCATION = 99;
     TextView latTxt, longTxt;
+    ImageButton mapBtn;
+    Double latitude, longitude;
+
     final LocationListener listener = new LocationListener() {
         @Override
         public void onLocationChanged(@NonNull Location location) {
@@ -31,26 +37,35 @@ public class F0AppointmentFrag extends Fragment {
         }
     };
 
-    public F0AppointmentFrag() {
+    public F0ViewAppointmentFrag(Double latitude, Double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
         // Required empty public constructor
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_f0_appointment, container, false);
-        latTxt = view.findViewById(R.id.frag_f0_appointment_f0_lat_txt);
-        longTxt = view.findViewById(R.id.frag_f0_appointment_f0_long_txt);
+        View view = inflater.inflate(R.layout.fragment_f0_view_appointment, container, false);
+        latTxt = view.findViewById(R.id.frag_f0_view_appointment_f0_lat_txt);
+        longTxt = view.findViewById(R.id.frag_f0_view_appointment_f0_long_txt);
+        mapBtn = view.findViewById(R.id.frag_f0_view_appointment_f0_map_btn);
+
         LocationManager manager = (LocationManager) requireContext().getSystemService(Context.LOCATION_SERVICE);
 
-
         // TODO request permission before
-        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            requestPermission();
+        if (latitude == 0.0 && longitude == 0.0)
+            manager.requestSingleUpdate(new Criteria(), listener, null);
+        else {
+            latTxt.setText(latitude + "\"E");
+            longTxt.setText(longitude + "\"N");
         }
-        manager.requestSingleUpdate(new Criteria(), listener, null);
+
+        mapBtn.setOnClickListener(v -> {
+            ((F0HomeActivity) requireContext()).switchToMapFrag();
+        });
 
         return view;
     }

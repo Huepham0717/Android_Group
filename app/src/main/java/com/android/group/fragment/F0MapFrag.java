@@ -1,10 +1,5 @@
 package com.android.group.fragment;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -15,7 +10,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+
+import com.android.group.F0HomeActivity;
 import com.android.group.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -31,9 +34,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.ArrayList;
-import java.util.Objects;
-
 public class F0MapFrag extends Fragment {
     private static final int MY_PERMISSION_REQUEST_LOCATION = 99;
     private static final long UPDATE_INTERVAL = 10 * 1000; //10 sec
@@ -48,8 +48,7 @@ public class F0MapFrag extends Fragment {
         }
     };
 
-    private OnMapReadyCallback callback = new OnMapReadyCallback() {
-
+    private final OnMapReadyCallback callback = new OnMapReadyCallback() {
         /**
          * Manipulates the map once available.
          * This callback is triggered when the map is ready to be used.
@@ -75,12 +74,24 @@ public class F0MapFrag extends Fragment {
         }
     };
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_f0_map, container, false);
+        View view = inflater.inflate(R.layout.fragment_f0_map, container, false);
+        Button setLocationBtn = view.findViewById(R.id.frag_f0_map_set_location_btn);
+        ImageButton currentPosBtn = view.findViewById(R.id.frag_f0_map_current_pos_btn);
+
+        setLocationBtn.setOnClickListener(v -> ((F0HomeActivity) requireContext()).switchToViewAppointmentFrag(
+                oldPlacingMarker.getPosition().latitude, oldPlacingMarker.getPosition().longitude));
+        currentPosBtn.setOnClickListener(v -> {
+            LatLng currentPos = new LatLng(oldCurrentPosMarker.getPosition().latitude, oldCurrentPosMarker.getPosition().longitude);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPos, 15));
+        });
+
+        return view;
     }
 
     @Override
