@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.group.R;
-import com.android.group.adapter.ReportAdapter;
+import com.android.group.adapter.MsgGroupAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,7 +66,7 @@ public class F0AllMsgFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_f0_all_msg, container, false);
         RecyclerView msgContainer = view.findViewById(R.id.frag_f0_all_msg_container);
-        ReportAdapter msgAdapter = new ReportAdapter(getContext(), 5);
+        MsgGroupAdapter msgAdapter = new MsgGroupAdapter(getContext(), 5);
         msgContainer.setLayoutManager(new GridLayoutManager(getContext(),1));
         msgContainer.setAdapter(msgAdapter);
         return view;

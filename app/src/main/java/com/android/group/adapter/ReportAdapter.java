@@ -56,7 +56,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         ImageButton viewBtn;
         public ReportViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.adapter_appointment_start_txt);
+            name = itemView.findViewById(R.id.adapter_report_datetime_txt);
             viewBtn = itemView.findViewById(R.id.adapter_report_view_btn);
             time= itemView.findViewById(R.id.adapter_report_time_txt);
         }

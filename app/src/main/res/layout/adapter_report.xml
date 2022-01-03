@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/adapter_appointment_doctor_txt"
+            android:id="@+id/adapter_report_name_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
@@ -24,7 +24,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/adapter_appointment_start_txt"
+            android:id="@+id/adapter_report_datetime_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
@@ -42,19 +42,19 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/adapter_appointment_date_txt"
+            android:id="@+id/adapter_report_email_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="Time"
             android:textColor="@color/black"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/adapter_appointment_end_txt"
+            app:layout_constraintBottom_toTopOf="@+id/adapter_report_role_txt"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="365dp" />
 
         <TextView
-            android:id="@+id/adapter_appointment_end_txt"
+            android:id="@+id/adapter_report_time_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
@@ -62,7 +62,7 @@
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/adapter_appointment_date_txt"
+            app:layout_constraintTop_toBottomOf="@+id/adapter_report_email_txt"
             tools:layout_editor_absoluteX="373dp" />
 
     </LinearLayout>
