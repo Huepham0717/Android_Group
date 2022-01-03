@@ -13,7 +13,8 @@
       "fVaxStat": "1 shot",
       "fInfectStat": "2nd infection",
       "fVitalStat": "Highly critical",
-      "fEmergency": "028179658"
+      "fEmergency": "028179658",
+      "dUUID": "D00"
     },
     {
       "fUUID": "F01",
@@ -28,7 +29,8 @@
       "fVaxStat": "No shot",
       "fInfectStat": "3rd infection or more",
       "fVitalStat": "Highly critical",
-      "fEmergency": "035746283"
+      "fEmergency": "035746283",
+      "dUUID": "D01"
     },
     {
       "fUUID": "F02",
@@ -43,7 +45,8 @@
       "fVaxStat": "No shot",
       "fInfectStat": "3rd infection or more",
       "fVitalStat": "Good",
-      "fEmergency": "051164367"
+      "fEmergency": "051164367",
+      "dUUID": "D00"
     },
     {
       "fUUID": "F03",
@@ -58,7 +61,8 @@
       "fVaxStat": "1 shot",
       "fInfectStat": "2nd infection",
       "fVitalStat": "Recovering",
-      "fEmergency": "046399125"
+      "fEmergency": "046399125",
+      "dUUID": "D02"
     },
     {
       "fUUID": "F04",
@@ -73,7 +77,8 @@
       "fVaxStat": "1 shot",
       "fInfectStat": "3rd infection or more",
       "fVitalStat": "Good",
-      "fEmergency": "024951917"
+      "fEmergency": "024951917",
+      "dUUID": "D02"
     },
     {
       "fUUID": "F05",
@@ -88,7 +93,8 @@
       "fVaxStat": "2 shots",
       "fInfectStat": "3rd infection or more",
       "fVitalStat": "Highly critical",
-      "fEmergency": "068144656"
+      "fEmergency": "068144656",
+      "dUUID": "D01"
     },
     {
       "fUUID": "F06",
@@ -103,7 +109,8 @@
       "fVaxStat": "2 shots",
       "fInfectStat": "2nd infection",
       "fVitalStat": "Good",
-      "fEmergency": "064454974"
+      "fEmergency": "064454974",
+      "dUUID": "D01"
     },
     {
       "fUUID": "F07",
@@ -118,7 +125,8 @@
       "fVaxStat": "1 shot",
       "fInfectStat": "3rd infection or more",
       "fVitalStat": "Critical",
-      "fEmergency": "011605484"
+      "fEmergency": "011605484",
+      "dUUID": "D02"
     },
     {
       "fUUID": "F08",
@@ -133,7 +141,8 @@
       "fVaxStat": "1 shot",
       "fInfectStat": "2nd infection",
       "fVitalStat": "Good",
-      "fEmergency": "062991084"
+      "fEmergency": "062991084",
+      "dUUID": "D00"
     }
   ],
   "doctors": [
@@ -173,130 +182,127 @@
   ],
   "reports": [
     {
-      "rUUID": "F00_D02",
+      "rUUID": "R0",
       "fUUID": "F00",
       "dUUID": "D02",
       "rTimeStamp": "06-01-2020 13:05",
       "rContent": "From F00 to D02"
     },
     {
-      "rUUID": "F00_D02",
+      "rUUID": "R1",
       "fUUID": "F00",
       "dUUID": "D02",
       "rTimeStamp": "08-06-2021 04:24",
       "rContent": "From F00 to D02"
     },
     {
-      "rUUID": "F00_D02",
+      "rUUID": "R2",
       "fUUID": "F00",
       "dUUID": "D02",
       "rTimeStamp": "15-06-2021 19:09",
       "rContent": "From F00 to D02"
     },
     {
-      "rUUID": "F01_D00",
+      "rUUID": "R3",
       "fUUID": "F01",
       "dUUID": "D00",
       "rTimeStamp": "27-02-2020 16:25",
       "rContent": "From F01 to D00"
     },
     {
-      "rUUID": "F01_D00",
+      "rUUID": "R4",
       "fUUID": "F01",
       "dUUID": "D00",
       "rTimeStamp": "08-01-2021 19:27",
       "rContent": "From F01 to D00"
     },
     {
-      "rUUID": "F02_D02",
+      "rUUID": "R5",
       "fUUID": "F02",
       "dUUID": "D02",
       "rTimeStamp": "31-05-2021 14:06",
       "rContent": "From F02 to D02"
     },
     {
-      "rUUID": "F03_D01",
+      "rUUID": "R6",
       "fUUID": "F03",
       "dUUID": "D01",
       "rTimeStamp": "28-02-2021 11:48",
       "rContent": "From F03 to D01"
+    }
+  ],
+  "appointments": [
+    {
+      "aUUID": "A0",
+      "fUUID": "F00",
+      "dUUID": "D00",
+      "aDate": "18-09-2020",
+      "aStart": "04:01",
+      "aEnd": "06:07",
+      "aLat": 12.034950224562877,
+      "aLong": 106.55982421788059,
+      "aF0Content": "From F00",
+      "aDoctorContent": "From D00"
     },
     {
-      "rUUID": "F03_D01",
-      "fUUID": "F03",
+      "aUUID": "A1",
+      "fUUID": "F00",
+      "dUUID": "D00,D02",
+      "aDate": "02-08-2020",
+      "aStart": "03:12",
+      "aEnd": "05:16",
+      "aLat": 8.371875382610032,
+      "aLong": 108.37742351959935,
+      "aF0Content": "From F00",
+      "aDoctorContent": "From D00,D0"
+    },
+    {
+      "aUUID": "A2",
+      "fUUID": "F01",
       "dUUID": "D01",
-      "rTimeStamp": "02-01-2020 18:22",
-      "rContent": "From F03 to D01"
+      "aDate": "13-12-2021",
+      "aStart": "15:12",
+      "aEnd": "16:20",
+      "aLat": 11.837838161703914,
+      "aLong": 105.34240910635226,
+      "aF0Content": "From F01",
+      "aDoctorContent": "From D01"
     },
     {
-      "rUUID": "F04_D02",
-      "fUUID": "F04",
-      "dUUID": "D02",
-      "rTimeStamp": "19-09-2021 11:18",
-      "rContent": "From F04 to D02"
+      "aUUID": "A3",
+      "fUUID": "F01",
+      "dUUID": "D01",
+      "aDate": "21-11-2020",
+      "aStart": "01:02",
+      "aEnd": "01:07",
+      "aLat": 8.357367304967305,
+      "aLong": 106.90566036396748,
+      "aF0Content": "From F01",
+      "aDoctorContent": "From D01"
     },
     {
-      "rUUID": "F04_D02",
-      "fUUID": "F04",
-      "dUUID": "D02",
-      "rTimeStamp": "14-04-2021 20:28",
-      "rContent": "From F04 to D02"
+      "aUUID": "A4",
+      "fUUID": "F02",
+      "dUUID": "D01",
+      "aDate": "08-03-2021",
+      "aStart": "00:59",
+      "aEnd": "03:14",
+      "aLat": 9.338596331365176,
+      "aLong": 106.38803596825286,
+      "aF0Content": "From F02",
+      "aDoctorContent": "From D01"
     },
     {
-      "rUUID": "F04_D02",
-      "fUUID": "F04",
-      "dUUID": "D02",
-      "rTimeStamp": "29-01-2020 07:50",
-      "rContent": "From F04 to D02"
-    },
-    {
-      "rUUID": "F05_D02",
-      "fUUID": "F05",
-      "dUUID": "D02",
-      "rTimeStamp": "17-07-2021 19:56",
-      "rContent": "From F05 to D02"
-    },
-    {
-      "rUUID": "F06_D00",
-      "fUUID": "F06",
-      "dUUID": "D00",
-      "rTimeStamp": "18-07-2021 08:42",
-      "rContent": "From F06 to D00"
-    },
-    {
-      "rUUID": "F07_D00",
-      "fUUID": "F07",
-      "dUUID": "D00",
-      "rTimeStamp": "13-03-2020 02:50",
-      "rContent": "From F07 to D00"
-    },
-    {
-      "rUUID": "F07_D00",
-      "fUUID": "F07",
-      "dUUID": "D00",
-      "rTimeStamp": "18-01-2020 15:27",
-      "rContent": "From F07 to D00"
-    },
-    {
-      "rUUID": "F07_D00",
-      "fUUID": "F07",
-      "dUUID": "D00",
-      "rTimeStamp": "15-01-2020 09:35",
-      "rContent": "From F07 to D00"
-    },
-    {
-      "rUUID": "F08_D00",
+      "aUUID": "A17",
       "fUUID": "F08",
-      "dUUID": "D00",
-      "rTimeStamp": "22-04-2020 21:19",
-      "rContent": "From F08 to D00"
-    },
-    {
-      "rUUID": "F08_D00",
-      "fUUID": "F08",
-      "dUUID": "D00",
-      "rTimeStamp": "08-07-2020 11:45",
-      "rContent": "From F08 to D00"
+      "dUUID": "D00,D01",
+      "aDate": "28-02-2021",
+      "aStart": "11:48",
+      "aEnd": "11:48",
+      "aLat": 10.922531978689221,
+      "aLong": 107.31604526398753,
+      "aF0Content": "From F08",
+      "aDoctorContent": "From D00,D0"
     }
   ]
 }

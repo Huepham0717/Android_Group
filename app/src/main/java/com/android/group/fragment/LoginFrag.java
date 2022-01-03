@@ -3,6 +3,7 @@ package com.android.group.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,9 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.group.F0HomeActivity;
 import com.android.group.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +28,7 @@ import com.android.group.R;
 public class LoginFrag extends Fragment {
     EditText usernameInput, passwordInput;
     TextView errorTxt;
+    FirebaseAuth firebaseAuth;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,6 +64,7 @@ public class LoginFrag extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        firebaseAuth = FirebaseAuth.getInstance();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -83,8 +91,21 @@ public class LoginFrag extends Fragment {
         } else {
             errorTxt.setText("");
             // TODO move to HomeActivity
-            Intent intent = new Intent(getContext(), F0HomeActivity.class);
-            startActivity(intent);
+            // Login the app
+            firebaseAuth.signInWithEmailAndPassword(usernameStr,passwordStr)
+                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            Toast.makeText(getContext(),"Logged in successfully",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getContext(), F0HomeActivity.class);
+                            startActivity(intent);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 }
