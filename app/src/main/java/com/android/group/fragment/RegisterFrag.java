@@ -297,7 +297,7 @@ public class RegisterFrag extends Fragment {
                 android.R.style.Theme_Holo_Dialog_MinWidth,
                 (datePicker, year1, month1, day1) -> {
                     dateInput.setText(String.format(Locale.US, "%02d", day1) + "-" +
-                            String.format(Locale.US, "%02d", month1 + 1) + year1);
+                            String.format(Locale.US, "%02d", month1 + 1) + "-" + year1);
                 },
                 year, month, day
         );

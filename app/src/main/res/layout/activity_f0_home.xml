@@ -29,7 +29,7 @@
             android:layout_weight="1"
             android:background="@android:color/white"
             android:backgroundTint="@android:color/secondary_text_light"
-            android:onClick="switchToMsgFrag"
+            android:onClick="switchToAllMsgFrag"
             app:srcCompat="@drawable/ic_chat" />
 
         <ImageButton
@@ -39,7 +39,6 @@
             android:layout_weight="1"
             android:background="@android:color/white"
             android:backgroundTint="@android:color/secondary_text_light"
-            android:onClick="switchToMapFrag"
             app:srcCompat="@drawable/ic_map" />
 
         <ImageButton
@@ -49,7 +48,7 @@
             android:layout_weight="1"
             android:background="@android:color/white"
             android:backgroundTint="@android:color/secondary_text_light"
-            android:onClick="switchToAppointmentFrag"
+            android:onClick="switchToAllAppointmentFrag"
             app:srcCompat="@drawable/ic_report" />
     </com.android.group.NavBar>
 
