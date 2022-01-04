@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -13,14 +12,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.group.F0HomeActivity;
 import com.android.group.R;
+import com.android.group.model.MedicalRecord;
+import com.android.group.model.Report;
+
+import java.util.List;
 
 public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportViewHolder> {
     private final Context context;
-    private int num;
+    List<Report> reportList;
+    String UID;
+    MedicalRecord medicalRecord;
 
-    public ReportAdapter(Context context, int num) {
+    public ReportAdapter(MedicalRecord medicalRecord,List<Report> reportList, Context context) {
+        this.medicalRecord = medicalRecord;
+        this.reportList = reportList;
         this.context = context;
-        this.num = num;
     }
 
     @NonNull
@@ -35,22 +41,24 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         String nameStr = "Health report " + position;
         holder.name.setText(nameStr);
         holder.viewBtn.setOnClickListener(v -> {
-            ((F0HomeActivity) context).switchToViewReportFrag(nameStr);
+            ((F0HomeActivity) context).switchToViewReportFrag(position, reportList.get(position).getReportId());
         });
+        holder.time.setText(reportList.get(position).getrTimestamp());
     }
 
     @Override
     public int getItemCount() {
-        return num;
+        return reportList.size();
     }
 
     static class ReportViewHolder extends RecyclerView.ViewHolder {
-        TextView name;
+        TextView name,time;
         ImageButton viewBtn;
         public ReportViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.adapter_report_datetime_txt);
             viewBtn = itemView.findViewById(R.id.adapter_report_view_btn);
+            time= itemView.findViewById(R.id.adapter_report_time_txt);
         }
     }
 }

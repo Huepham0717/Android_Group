@@ -14,15 +14,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.android.group.R;
-import com.android.group.adapter.ReportAdapter;
+import com.android.group.adapter.AppointmentAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link F0AllReportFrag#newInstance} factory method to
+ * Use the {@link F0AllAppointmentFrag#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class F0AllReportFrag extends Fragment {
-    Spinner statusSpinner, sortSpinner;
+public class F0AllAppointmentFrag extends Fragment {
+    private Spinner statusSpinner, sortSpinner;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,7 +33,7 @@ public class F0AllReportFrag extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public F0AllReportFrag() {
+    public F0AllAppointmentFrag() {
         // Required empty public constructor
     }
 
@@ -43,11 +43,11 @@ public class F0AllReportFrag extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment F0AllReportFrag.
+     * @return A new instance of fragment F0AllAppointmentFrag.
      */
     // TODO: Rename and change types and number of parameters
-    public static F0AllReportFrag newInstance(String param1, String param2) {
-        F0AllReportFrag fragment = new F0AllReportFrag();
+    public static F0AllAppointmentFrag newInstance(String param1, String param2) {
+        F0AllAppointmentFrag fragment = new F0AllAppointmentFrag();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -68,17 +68,19 @@ public class F0AllReportFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_f0_all_report, container, false);
-        RecyclerView reportContainer = view.findViewById(R.id.frag_f0_all_report_container);
+        View view = inflater.inflate(R.layout.fragment_f0_all_appointment, container, false);
+        RecyclerView appointmentContainer = view.findViewById(R.id.frag_f0_all_appointment_container);
+        AppointmentAdapter appointmentAdapter = new AppointmentAdapter(getContext(), 10);
+        appointmentContainer.setLayoutManager(new GridLayoutManager(getContext(),1));
+        appointmentContainer.setAdapter(appointmentAdapter);
 
-
-        statusSpinner = view.findViewById(R.id.frag_f0_all_report_status_spinner);
-        sortSpinner = view.findViewById(R.id.frag_f0_all_report_sort_spinner);
+        statusSpinner = view.findViewById(R.id.frag_f0_all_appointment_status_spinner);
+        sortSpinner = view.findViewById(R.id.frag_f0_all_appointment_sort_spinner);
 
         statusSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.adapter_spinner,
-                new String[]{"Good", "Recovering", "Critical", "Highly Critical"}));
+                new String[]{"Unaccepted", "Pending", "Finished"}));
         sortSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.adapter_spinner,
-                new String[]{"Name", "Date", "Doctor's id"}));
+                new String[]{"Date", "Doctor's name"}));
 
         statusSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
