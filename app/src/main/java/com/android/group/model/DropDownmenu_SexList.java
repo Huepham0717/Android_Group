@@ -37,7 +37,5 @@ public class DropDownmenu_SexList extends AppCompatActivity {
             }
         });
 
-
-
     }
 }

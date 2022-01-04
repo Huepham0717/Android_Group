@@ -18,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupAssignment">
         <activity
+            android:name=".F0UpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".F0ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorAppointmentsActivity"
+            android:exported="false" />
+        <activity
             android:name=".DoctorUpdateActivity"
             android:exported="false" />
         <activity

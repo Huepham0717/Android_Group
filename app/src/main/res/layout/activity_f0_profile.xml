@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DoctorProfileActivity">
-
-
+    tools:context=".F0ProfileActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -47,7 +45,7 @@
             android:layout_height="193dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:src="@drawable/img1"
+            android:src="@drawable/img3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.455"
@@ -58,12 +56,12 @@
 
 
         <TextView
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/tv_name"
-            android:text="Doctor A"
+            android:text="Patient A"
             android:textSize="50sp"
             android:textColor="@color/black">
         </TextView>
@@ -165,15 +163,37 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center">
-
             <TextView
-                android:id="@+id/tv_nationalID_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/tv_emergency_label"
+                android:text="Emergency:"
+                android:textSize="30sp"
+                android:textColor="@color/black">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_emergency"
+                android:layout_toEndOf="@id/tv_emergency_label"
+                android:text="00325645"
+                android:textSize="28sp"
+                android:textColor="@color/black">
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_nationalID_label"
                 android:text="ID/Passport:"
-                android:textColor="@color/black"
-                android:textSize="30sp"></TextView>
-
+                android:textSize="30sp"
+                android:textColor="@color/black">
+            </TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -185,5 +205,4 @@
             </TextView>
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
